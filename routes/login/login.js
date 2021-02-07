@@ -9,13 +9,21 @@ const User = require(`../../models/usermodel/user`)
 
 router.get(`/login`, (req, res, next) => {
 
-    res.render(`login`)
+    const kuki = req.session.token 
+    
+    if (!kuki) {
+        res.render(`login`)
+    } else {
+        res.redirect(`/home`)
+    }
 
 })
 
 router.post(`/login`, async (req, res, next) => {
 
     const {email, password} = req.body
+
+    let errorBox = []
 
     try {
 
@@ -26,20 +34,23 @@ router.post(`/login`, async (req, res, next) => {
             const result = await bcrypt.compare(password, foundAccount.password)
 
             if (result) {
-                const token = await jwt.sign({activeUser: foundAccount._id}, process.env.JWT_KEY)
-                req.session.token = token
-                console.log(req.session.token)
+                const token = jwt.sign({activeUser: foundAccount._id}, process.env.JWT_KEY)
+                const kuki = req.session.token = token
+                
                 res.redirect(`/home`)
             } else {
-                console.log(`Ekis`)
+                errorBox.push({ msg: `Invalid Email or Password.`})
+                return res.render(`login`, {errorBox})
             }
 
         } else {
-            return next(createError(400, err))
+            errorBox.push({ msg: `User not exist.`})
+            return res.render(`login`, {errorBox})
         }
         
     } catch (err) {
-        next(createError(400, `User not exist.`))
+        errorBox.push({ msg: `User not exist.`})
+        return res.render(`login`, {errorBox})
     }
 
 })

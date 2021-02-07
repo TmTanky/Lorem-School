@@ -3,12 +3,20 @@
 <div class="registerbox">
 
     <form action="/register" method="post">
-        <input type="text" name="firstName" placeholder="First Name">
+
+        <h1> LoremSchool Register </h1>
+
+        <input type="text" name="firstName" placeholder="First Name" class="first">
         <input type="text" name="lastName" placeholder="Last Name">
         <input type="email" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="Password">
-        <input type="password" name="passwordConfirm" placeholder="Password Confirmation">
-        <button type="submit"> Register </button>
+        <input type="password" name="passwordConfirm" placeholder="Password Confirmation" class="last">
+        
+        <div class="loginregis">
+            <button type="submit"> Register </button> 
+            <a href="/login"> Login </a>
+        </div>
+        
     </form>
 
 </div>

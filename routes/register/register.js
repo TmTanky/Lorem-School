@@ -12,7 +12,15 @@ const saltRounds = 10
 const User = require(`../../models/usermodel/user`)
 
 router.get(`/register`, (req, res, next) => {
-    res.render(`register`)
+
+    const kuki = req.session.token
+
+    if (!kuki) {
+        res.render(`register`)
+    } else {
+        res.redirect(`/home`)
+    }
+    
 })
 
 router.post(`/register`, body('password').isLength({ min: 5 }).withMessage(`Password must minimum of 5 characters.`), async (req, res, next) => {
@@ -40,13 +48,10 @@ router.post(`/register`, body('password').isLength({ min: 5 }).withMessage(`Pass
         })
 
         const savedStudent = await newStudent.save()
-        const token = await jwt.sign({activeUser: newStudent._id}, process.env.JWT_KEY)
-        req.session.token = token
-        console.log(req.session.token)
+        const token = jwt.sign({activeUser: newStudent._id}, process.env.JWT_KEY)
+        const kuki = req.session.token = token
 
-        res.json({
-            savedStudent
-        })
+        res.redirect(`/home`)
         
     } catch (err) {
         next(createError(400, err))

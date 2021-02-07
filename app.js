@@ -15,6 +15,8 @@ const registerRouter = require(`./routes/register/register`)
 const loginRouter = require(`./routes/login/login`)
 const homeRouter = require(`./routes/home/home`)
 
+const logoutRouter = require(`./routes/logout/logout`)
+
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(`public`))
@@ -33,6 +35,8 @@ app.use(rootRouter)
 app.use(registerRouter)
 app.use(loginRouter)
 app.use(homeRouter)
+
+app.use(logoutRouter)
 
 app.use((req, res, next) => {
     next(createError(404, `URL not found`))
