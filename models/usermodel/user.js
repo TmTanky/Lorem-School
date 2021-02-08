@@ -11,12 +11,19 @@ const userSchema = new mongoose.Schema ({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,
         required: true
-    }
+    },
+    subjects: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: `Subject`
+        }
+    ]
 })
 
 const UserMan = new mongoose.model(`User`, userSchema)

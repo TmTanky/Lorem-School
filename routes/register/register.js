@@ -27,15 +27,24 @@ router.post(`/register`, body('password').isLength({ min: 5 }).withMessage(`Pass
 
     const {firstName, lastName, email, password, passwordConfirm} = req.body
 
+    let errorBox = []
+
     try {
+
+        if (!firstName, !lastName, !email, !password, !passwordConfirm) {
+            errorBox.push({ msg: `Please input all fields.` })
+            return res.render(`register`, {errorBox})
+        }
 
         const errors = validationResult(req)
         if (!errors.isEmpty()) {
-          return res.status(400).json({ errors: errors.array() });
+            errorBox.push({ msg: errors.errors[0].msg })
+            return res.render(`register`, {errorBox})
         }
 
         if (password !== passwordConfirm) {
-            return next(createError(400, `Password must match.`))
+            errorBox.push({ msg: `Password must match.` })
+            return res.render(`register`, {errorBox})
         }
 
         const hashedPassword = await bcrypt.hash(password, saltRounds)
@@ -54,6 +63,12 @@ router.post(`/register`, body('password').isLength({ min: 5 }).withMessage(`Pass
         res.redirect(`/home`)
         
     } catch (err) {
+
+        if (err.code === 11000) {
+            errorBox.push({ msg: `Email is already taken.` })
+            return res.render(`register`, {errorBox})
+        }
+
         next(createError(400, err))
     }
 

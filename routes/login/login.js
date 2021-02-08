@@ -27,6 +27,11 @@ router.post(`/login`, async (req, res, next) => {
 
     try {
 
+        if (!email, !password) {
+            errorBox.push({ msg: `Please input all fields.`})
+            return res.render(`login`, {errorBox})
+        }
+
         const foundAccount = await User.findOne({email})
 
         if (foundAccount) {
@@ -44,12 +49,12 @@ router.post(`/login`, async (req, res, next) => {
             }
 
         } else {
-            errorBox.push({ msg: `User not exist.`})
+            errorBox.push({ msg: `Invalid Email or Password.`})
             return res.render(`login`, {errorBox})
         }
         
     } catch (err) {
-        errorBox.push({ msg: `User not exist.`})
+        errorBox.push({ msg: `Invalid Email or Password.`})
         return res.render(`login`, {errorBox})
     }
 

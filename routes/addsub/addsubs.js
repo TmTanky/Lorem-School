@@ -7,7 +7,7 @@ const router = express.Router()
 const User = require(`../../models/usermodel/user`)
 const Subject = require(`../../models/subjectsmodel/subject`)
 
-router.get(`/home`, async (req, res, next) => {
+router.get(`/addsubjects`, async (req, res, next) => {
 
     const kuki = req.session.token
 
@@ -19,11 +19,9 @@ router.get(`/home`, async (req, res, next) => {
             const decoded = jwt.verify(kuki, process.env.JWT_KEY)
             const foundUser = await User.findOne({_id: decoded.activeUser})
 
-            // const subs = await Subject.find({})
+            const subs = await Subject.find({})
 
-            // console.log(subs)
-
-            res.render(`home`, {user: foundUser.firstName})
+            res.render(`addsubs`, {subs})
         }
         
     } catch (err) {
@@ -34,6 +32,17 @@ router.get(`/home`, async (req, res, next) => {
 
         next(createError(400, err))
     }
+
+})
+
+router.post(`/addsubjects`, async (req, res, next) => {
+
+    const ifChecked = req.body[`subject`]
+
+    console.log(checkedSubject)
+
+    
+    
 
 })
 

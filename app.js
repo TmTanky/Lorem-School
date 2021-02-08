@@ -14,6 +14,10 @@ const rootRouter = require(`./routes/root/root`)
 const registerRouter = require(`./routes/register/register`)
 const loginRouter = require(`./routes/login/login`)
 const homeRouter = require(`./routes/home/home`)
+const settingsRouter = require(`./routes/settingsOption/settings`)
+const editProfileRouter = require(`./routes/editprofile/editprofile`)
+const addSubjectRouter = require(`./routes/addsub/addsubs`)
+const removeSubjectRouter = require(`./routes/removesub/removesub`)
 
 const logoutRouter = require(`./routes/logout/logout`)
 
@@ -35,6 +39,10 @@ app.use(rootRouter)
 app.use(registerRouter)
 app.use(loginRouter)
 app.use(homeRouter)
+app.use(settingsRouter)
+app.use(editProfileRouter)
+app.use(addSubjectRouter)
+app.use(removeSubjectRouter)
 
 app.use(logoutRouter)
 

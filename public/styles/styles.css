@@ -11,6 +11,10 @@
     --small: 'Raleway', sans-serif;
 }
 
+label {
+    margin: 0rem 0.5rem;
+}
+
 /* Bootstrap */
 
 .alert {
@@ -130,7 +134,7 @@
     padding: 0.5rem;
     outline: none;
     border: 1px solid #ccc;
-    width: 60%;
+    width: 70%;
     font-family: var(--small);
 }
 
@@ -167,4 +171,116 @@
 .registerbox form .loginregis a {
     margin: auto 1rem;
     font-family: var(--small);
+}
+
+/* Settings */
+
+.settingbox {
+    display: flex;
+    padding: 1rem 0rem;
+}
+
+.settings {
+    flex: 2;
+    padding: 15rem 3rem;
+    border-right: solid black 1px;
+}
+
+.settings li {
+    list-style: none;
+}
+
+.settings li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: var(--small);
+}
+
+.settingfeed {
+    flex: 8;
+    padding: 5rem;
+}
+
+.settingfeed h2 {
+    font-size: 4rem;
+    font-family: var(--big);
+}
+
+/* Edit Profile */
+
+.editfeed {
+    flex: 8;
+    padding: 5rem;
+}
+
+.editfeed form {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0rem;
+    font-family: var(--small);
+}
+
+.editfeed form input {
+    padding: 0.3rem 0.5rem;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 0.5rem 0rem;
+    width: 50%;
+}
+
+.editfeed form input:focus {
+    border-color: green;
+}
+
+.editfeed h2 {
+    font-size: 4rem;
+    font-family: var(--big);
+}
+
+.editfeed button {
+    width: 10%;
+    margin: 1rem 0rem;
+    padding: 0.3rem 1rem;
+    font-family: var(--small);
+    background: rgb(58, 155, 235);
+    color: white;
+    border: none;
+}
+
+/* Add subjects */
+
+.addsubfeed {
+    flex: 8;
+    padding: 5rem;
+}
+
+.addsubfeed form span {
+    margin: 0.3rem 0rem;
+}
+
+.addsubfeed form span label {
+    font-size: 1.2rem;
+    font-family: var(--small);
+}
+
+.addsubfeed h2 {
+    font-size: 4rem;
+    font-family: var(--big);
+}
+
+.addsubfeed form {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.addsubfeed button {
+    width: 10%;
+    margin: 1rem 0rem;
+    padding: 0.3rem 1rem;
+    font-family: var(--small);
+    background: rgb(58, 155, 235);
+    color: white;
+    border: none;
 }

@@ -7,7 +7,7 @@ const router = express.Router()
 const User = require(`../../models/usermodel/user`)
 const Subject = require(`../../models/subjectsmodel/subject`)
 
-router.get(`/home`, async (req, res, next) => {
+router.get(`/settings`, async (req, res, next) => {
 
     const kuki = req.session.token
 
@@ -23,7 +23,7 @@ router.get(`/home`, async (req, res, next) => {
 
             // console.log(subs)
 
-            res.render(`home`, {user: foundUser.firstName})
+            res.render(`settings`)
         }
         
     } catch (err) {

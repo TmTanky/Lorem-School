@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Math",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sunt ipsum rerum delectus facere cupiditate reiciendis quaerat repudiandae et vitae sed ipsam velit nemo, temporibus totam placeat maiores, quibusdam nobis sit iste neque, ratione excepturi?"
+    },
+    {
+        "name": "Filipino",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sunt ipsum rerum delectus facere cupiditate reiciendis quaerat repudiandae et vitae sed ipsam velit nemo, temporibus totam placeat maiores, quibusdam nobis sit iste neque, ratione excepturi?"
+    },
+    {
+        "name": "Science",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sunt ipsum rerum delectus facere cupiditate reiciendis quaerat repudiandae et vitae sed ipsam velit nemo, temporibus totam placeat maiores, quibusdam nobis sit iste neque, ratione excepturi?"
+    },
+    {
+        "name": "ESP",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sunt ipsum rerum delectus facere cupiditate reiciendis quaerat repudiandae et vitae sed ipsam velit nemo, temporibus totam placeat maiores, quibusdam nobis sit iste neque, ratione excepturi?"
+    },
+    {
+        "name": "T.L.E",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sunt ipsum rerum delectus facere cupiditate reiciendis quaerat repudiandae et vitae sed ipsam velit nemo, temporibus totam placeat maiores, quibusdam nobis sit iste neque, ratione excepturi?"
+    },
+    {
+        "name": "AP",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sunt ipsum rerum delectus facere cupiditate reiciendis quaerat repudiandae et vitae sed ipsam velit nemo, temporibus totam placeat maiores, quibusdam nobis sit iste neque, ratione excepturi?"
+    },
+    {
+        "name": "Physical Education",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sunt ipsum rerum delectus facere cupiditate reiciendis quaerat repudiandae et vitae sed ipsam velit nemo, temporibus totam placeat maiores, quibusdam nobis sit iste neque, ratione excepturi?"
+    },
+    {
+        "name": "Programming",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sunt ipsum rerum delectus facere cupiditate reiciendis quaerat repudiandae et vitae sed ipsam velit nemo, temporibus totam placeat maiores, quibusdam nobis sit iste neque, ratione excepturi?"
+    }
+]

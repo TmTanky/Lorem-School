@@ -1,0 +1,29 @@
+<%- include(`header`) %>
+
+<div class="settingbox">
+    <div class="settings">
+        <li> <a href="/editprofile"> Edit Profile </a> </li>
+        <li> <a href="/removesubjects"> Remove Subjects </a> </li>
+    </div>
+
+    <div class="addsubfeed">
+        <h2> Add Subjects </h2>
+
+        <form action="/addsubjects" method="post">
+            
+            <% subs.map((sub) => { %>
+                <span> 
+                    <input type="checkbox" name="subject">
+                    <input type="hidden" name="<%= sub.name %>" value="<%= sub.name %>">
+                    <label for="subject"> <%= sub.name %> </label>
+                </span>
+            <% }) %>
+            
+            <button type="submit"> Add </button>
+            
+        </form>
+    </div>
+</div>
+
+<%- include(`footer`) %>
+
