@@ -1,16 +1,21 @@
 <%- include(`header`) %>
 
-<!-- <div class="homebox">
-    <div class="homesettings">
-        <li> <a href=""> Edit Profile </a> </li>
-        <li> <a href=""> Enroll Subjects </a> </li>
-        <li> <a href=""></a> </li>
-        <li> <a href=""></a> </li>
+<div class="homebox">
+
+    <div class="welcomegreet">
+        <h1> Welcome <%= user %> </h1>
     </div>
 
-    <div class="homefeed">
-        <h2> Welcome <%= user %> </h2>
+    <div class="sublist">
+        <h3> Available Subjects </h3>
+        <% subs.map(sub => { %>
+            <div class="sublistbox">
+                <h2> <%= sub.name %> </h2>
+                <p> <%= sub.description %> </p>
+            </div>
+        <% }) %>
     </div>
-</div> -->
+
+</div>
 
 <%- include(`footer`) %>

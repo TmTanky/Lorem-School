@@ -26,6 +26,14 @@ const userSchema = new mongoose.Schema ({
     ]
 })
 
+const autoPopulateLead = function(next) {
+    this.populate('subjects');
+    next();
+  };
+  
+userSchema.pre('findOne', autoPopulateLead)
+.pre('find', autoPopulateLead)
+
 const UserMan = new mongoose.model(`User`, userSchema)
 
 module.exports = UserMan

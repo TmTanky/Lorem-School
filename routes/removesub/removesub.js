@@ -19,11 +19,10 @@ router.get(`/removesubjects`, async (req, res, next) => {
             const decoded = jwt.verify(kuki, process.env.JWT_KEY)
             const foundUser = await User.findOne({_id: decoded.activeUser})
 
-            // const subs = await Subject.find({})
+            const subjectName = foundUser.subjects
 
-            // console.log(subs)
+            res.render(`removesub`, {subjectName})
 
-            res.render(`removesub`)
         }
         
     } catch (err) {
@@ -34,6 +33,32 @@ router.get(`/removesubjects`, async (req, res, next) => {
 
         next(createError(400, err))
     }
+
+})
+
+router.post(`/removesubjects`, async (req, res, next) => {
+    
+    const querySubject = req.body.removesub
+    const kuki = req.session.token
+
+    try {
+
+        const decoded = jwt.verify(kuki, process.env.JWT_KEY)
+        // const foundUser = await User.findOne({_id: decoded.activeUser})
+
+        const hehe = await User.findOneAndUpdate({_id: decoded.activeUser}, {
+            $pull: {
+                subjects: querySubject
+            }
+         })
+
+        res.redirect(`/removesubjects`)
+
+        
+    } catch (err) {
+        next(createError(400, err))
+    }
+    
 
 })
 

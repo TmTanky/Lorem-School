@@ -31,7 +31,7 @@ app.use(cookieSession({
     keys: [process.env.KEY_1, process.env.KEY_2]
   }))
 
-mongoose.connect(process.env.DB, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
+mongoose.connect(process.env.DB, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, 'useFindAndModify': false})
 
 // Routers render
 

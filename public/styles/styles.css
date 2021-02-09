@@ -173,6 +173,40 @@ label {
     font-family: var(--small);
 }
 
+/* Home */
+
+.homebox {
+    padding: 6rem 2rem;
+}
+
+.welcomegreet {
+    text-align: center;
+    font-family: var(--big);
+    margin: 3rem 0rem;
+}
+
+.sublist h3 {
+    text-align: center;
+    font-family: var(--big);
+}
+
+.sublistbox {
+    padding: 3rem 1rem;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin: 1.5rem 2rem;
+}
+
+.sublistbox h2 {
+    font-family: var(--big);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.sublistbox p {
+    font-family: var(--small);
+}
+
 /* Settings */
 
 .settingbox {
@@ -283,4 +317,43 @@ label {
     background: rgb(58, 155, 235);
     color: white;
     border: none;
+}
+
+/* Remove Subjects */
+
+.removefeed {
+    flex: 8;
+    padding: 5rem;
+}
+
+.removefeed .rem {
+    margin-top: 3rem;
+    padding: 2rem 0rem;
+}
+
+.removefeed h2 {
+    font-size: 4rem;
+    font-family: var(--big);
+}
+
+.removefeed form {
+    display: flex;
+}
+
+.removefeed .subname {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.removefeed .subdelete {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.removefeed button {
+    background: none;
+    border: none;
+    outline: none;
 }

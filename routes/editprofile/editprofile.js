@@ -35,4 +35,43 @@ router.get(`/editprofile`, async (req, res, next) => {
 
 })
 
+router.post(`/editprofile`, async (req, res, next) => {
+
+    const kuki = req.session.token
+    const {firstName, lastName} = req.body
+
+    let errorBox = []
+
+    try {
+
+        if (!firstName || !lastName) {
+            const decoded = jwt.verify(kuki, process.env.JWT_KEY)
+            const foundUser = await User.findOne({_id: decoded.activeUser})
+            const {firstName, lastName} = foundUser
+            errorBox.push({ msg: `Both inputs cannot be empty.`}) 
+            return res.render(`editprofile`, {errorBox, firstName, lastName})
+        }
+
+        if (!kuki) {
+            res.redirect(`/login`)
+        } else {
+            
+            const decoded = jwt.verify(kuki, process.env.JWT_KEY)
+            const foundUser = await User.findOneAndUpdate({_id: decoded.activeUser},{firstName, lastName})
+            
+            res.redirect(`/editprofile`)
+            
+        }
+        
+    } catch (err) {
+
+        if (err.name === "TokenExpiredError") {
+            return next(createError(500, `Token expired, Try to login again.`))
+        }
+
+        next(createError(400, err))
+    }
+
+})
+
 module.exports = router

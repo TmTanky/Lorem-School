@@ -19,11 +19,9 @@ router.get(`/home`, async (req, res, next) => {
             const decoded = jwt.verify(kuki, process.env.JWT_KEY)
             const foundUser = await User.findOne({_id: decoded.activeUser})
 
-            // const subs = await Subject.find({})
+            const subs = await Subject.find({})
 
-            // console.log(subs)
-
-            res.render(`home`, {user: foundUser.firstName})
+            res.render(`home`, {user: foundUser.firstName, subs})
         }
         
     } catch (err) {
