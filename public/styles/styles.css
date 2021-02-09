@@ -176,13 +176,13 @@ label {
 /* Home */
 
 .homebox {
-    padding: 6rem 2rem;
+    padding: 1rem 2rem;
 }
 
 .welcomegreet {
     text-align: center;
     font-family: var(--big);
-    margin: 3rem 0rem;
+    margin: 1rem 0rem;
 }
 
 .sublist h3 {
@@ -232,6 +232,7 @@ label {
 
 .settingfeed {
     flex: 8;
+    display: flex;
     padding: 5rem;
 }
 
@@ -338,9 +339,10 @@ label {
 
 .removefeed form {
     display: flex;
+    justify-content: space-around;
 }
 
-.removefeed .subname {
+.removefeed .rem form .subname {
     flex: 1;
     display: flex;
     justify-content: flex-start;
@@ -349,7 +351,7 @@ label {
 .removefeed .subdelete {
     flex: 1;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .removefeed button {
@@ -357,3 +359,201 @@ label {
     border: none;
     outline: none;
 }
+
+/* Misc. */
+
+.hamburger {
+    padding: 1rem;
+}
+
+/* Media Q's */
+
+@media screen and (min-width: 1000px) {
+    
+    .sidenav {
+        visibility: hidden;
+    }
+
+    .hamburger {
+        visibility: hidden;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .sidenav {
+        visibility: visible;
+        background-color: black;
+    }
+
+    .homebox {
+        padding: 3rem 0rem;
+    }
+
+    .collapse, .navbar-toggler {
+        visibility: hidden;
+    }
+
+    .sublistbox {
+        margin: 1rem;
+    }
+
+    .sublistbox h2 {
+        font-size: 2.5rem;
+    }
+
+    /* Settings */
+
+    .settingbox {
+        flex-direction: column;
+    }
+
+    .settings {
+        visibility: hidden;
+        padding: 0;
+
+    }
+
+    .settingfeed {
+        justify-content: center;
+        padding: 0;
+    }
+
+    /* Edit Profile */
+
+    .editfeed {
+        padding: 1rem 2rem;
+    }
+
+    .editfeed h2 {
+        font-size: 3rem;
+    }
+
+    .editfeed button {
+        width: 100px;
+    }
+
+    /* Add subs */
+
+    .addsubfeed {
+        padding: 0rem 5rem;
+    }
+
+    .addsubfeed button {
+        width: 100px;
+    }
+
+    /* remove subs */
+
+    .removefeed {
+        padding: 0rem 5rem;
+    }
+
+    .removefeed h2 {
+        font-size: 3rem;
+        font-family: var(--big);
+    }
+
+    .removefeed .subdelete {
+        justify-content: flex-end;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .editfeed form input {
+        width: 80%;
+    }
+
+    .addsubfeed {
+        padding: 0rem 3rem;
+    }
+
+    .removefeed {
+        padding: 0rem 2rem;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .editfeed form input {
+        width: 100%;
+    }
+
+    .addsubfeed {
+        padding: 0rem 2rem;
+    }
+
+    .addsubfeed form {
+        margin-top: 2rem;
+    }
+
+    .addsubfeed h2 {
+        font-size: 10.5vw;
+        font-family: var(--big);
+    }
+
+    .removefeed h2 {
+        font-size: 2rem;
+        font-family: var(--big);
+    }
+
+    .removefeed .rem form .subname h1 {
+        font-size: 7vw;
+    }
+
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: whitesmoke;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+    font-family: var(--small);
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #c7bcbc;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
