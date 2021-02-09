@@ -1,9 +1,19 @@
 <%- include(`header`) %>
 
+<div class="burgerside">
+    <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/settings"> Settings </a>
+    <a href="/logout"> Logout </a>
+  </div>
+
+  <img src="https://img.icons8.com/android/24/000000/menu.png" onclick="openNav()" class="hamburger"/> 
+  </div>
+
 <div class="homebox">      
 
     <div class="welcomegreet">
-        <h1> Welcome <%= user %> </h1>
+        <h1> <strong> Welcome <%= user %> </strong> </h1>
     </div>
 
     <div class="sublist">

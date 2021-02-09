@@ -51,12 +51,7 @@ app.use((req, res, next) => {
 })
 
 app.use((err, req, res, next) => {
-    res.status = 500 || err.status
-    res.json({
-        status: res.status,
-        error: err.message,
-        err
-    })
+    return res.render(`error`)
 })
 
 app.listen(process.env.PORT || 3000, () => {

@@ -140,6 +140,30 @@
     font-family: var(--small);
 }
 
+/* Misc */
+
+.errorpage {
+    padding: 15rem 3rem;
+    text-align: center;
+    margin: auto;
+}
+
+.errorpage h1 {
+    font-family: var(--small);
+}
+
+.alert {
+    padding: 0.8rem 1rem;
+    margin: 1rem 0rem;
+    width: 70%;
+    font-size: 0.8rem;
+}
+
+.alert p {
+    margin: auto;
+    font-family: var(--small);
+}
+
 @media screen and (max-width: 1000px) {
 
     .loginbox form {
@@ -186,5 +210,11 @@
         width: 90%;
     }
 
+    .alert {
+        width: 90%;
+    }
+
+
 
 }
+
